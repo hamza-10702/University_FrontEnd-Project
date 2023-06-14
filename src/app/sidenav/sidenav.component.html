@@ -1,0 +1,31 @@
+<div class="main_universities">
+  <h1>DASHBOARD</h1>
+</div>
+<div class="main_dashboard">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Universities</mat-card-title>
+      <mat-card-subtitle>Total Universities</mat-card-subtitle>
+      <p *ngIf="universityCount" class="count">{{ universityCount }}</p>
+    </mat-card-header>
+  </mat-card>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Students</mat-card-title>
+      <mat-card-subtitle>Total Students</mat-card-subtitle>
+      <p *ngIf="studentsCount" class="count">{{ studentsCount }}</p>
+    </mat-card-header>
+  </mat-card>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Courses</mat-card-title>
+      <mat-card-subtitle>Total Courses</mat-card-subtitle>
+      <p *ngIf="courseCount" class="count">{{ courseCount }}</p>
+    </mat-card-header>
+  </mat-card>
+</div>
+
+<div class="charts">
+  <canvas id="barChart"></canvas>
+  <canvas id="totalRecords"></canvas>
+</div>

@@ -1,0 +1,35 @@
+.content {
+  padding-top: 10px;
+}
+
+mat-form-field {
+  width: 400px;
+}
+
+.title h1 {
+  text-align: center;
+  /* background-color: aqua; */
+  margin: auto;
+  font-weight: bold;
+}
+
+.action {
+  padding: 0px 25px 20px;
+}
+
+.action button {
+  flex: 1;
+}
+
+.add_course {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.dynamic_input {
+  width: 85%;
+}
+
+.dynamic_input input {
+  height: 15px;
+}

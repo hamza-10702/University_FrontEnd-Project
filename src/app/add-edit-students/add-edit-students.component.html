@@ -1,0 +1,80 @@
+<div class="title" mat-dialog-title>
+  <h1>Add New Student Information</h1>
+</div>
+
+<form [formGroup]="empForm" (ngSubmit)="addStudent()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Student Name</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Student Name"
+          formControlName="firstName"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" formControlName="lastName" />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" placeholder="Age" formControlName="age" />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email" />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Select University</mat-label>
+        <mat-select
+          (selectionChange)="addSelectetdUniversityCourses($event)"
+          formControlName="university"
+          [compareWith]="universityCompareObject"
+        >
+          <mat-option
+            *ngFor="let university of allUniversityDropdown"
+            [value]="university"
+            >{{ university.name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Select Courses</mat-label>
+
+        <mat-select
+          formControlName="courses"
+          multiple
+          [compareWith]="compareObjects"
+        >
+          <mat-option
+            *ngFor="let course of allCoursesDropdown"
+            [value]="course"
+            >{{ course.subject_name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">
+      Cancel
+    </button>
+    <button mat-raised-button color="primary" type="submit">
+      {{ data ? "Update" : "Save" }}
+    </button>
+  </div>
+</form>

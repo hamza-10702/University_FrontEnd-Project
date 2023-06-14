@@ -1,0 +1,46 @@
+.main_universities {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+
+  padding-left: 20px;
+  align-items: center;
+  margin: auto;
+}
+
+.main_universities h1 {
+  font-size: 40px;
+  padding-block: 30px;
+  font-weight: 900;
+}
+
+.add_uni {
+  float: right;
+  clear: both;
+  padding: 20px;
+}
+
+.table-container {
+  padding-inline: 20px;
+}
+
+.filter_input {
+  background-color: white;
+}
+.mdc-text-field--filled {
+  background-color: white !important;
+}
+
+.mdc-text-field {
+  background-color: white !important;
+}
+
+.mat-cell {
+  margin: auto;
+  padding-block: 20px;
+  text-align: center;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: white !important;
+}

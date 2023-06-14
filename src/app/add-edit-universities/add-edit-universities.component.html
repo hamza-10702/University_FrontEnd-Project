@@ -1,0 +1,92 @@
+<div class="title" mat-dialog-title>
+  <h1>Add New University Information</h1>
+</div>
+
+<form [formGroup]="empForm" (ngSubmit)="addUniversity()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Univertsity Name</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Univertsity Name"
+          formControlName="name"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>University Address</mat-label>
+        <input
+          matInput
+          placeholder="University Address"
+          formControlName="address"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Contact</mat-label>
+        <input matInput placeholder="Contact" formControlName="contact" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <div formArrayName="dynamicFields">
+        <div
+          *ngFor="let field of dynamicFields.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <mat-form-field class="dynamic_input" appearance="outline">
+            <mat-label>Course Name</mat-label>
+            <input
+              matInput
+              placeholder="New Courses"
+              formControlName="newCourses"
+            />
+          </mat-form-field>
+
+          <button mat-icon-button color="warn" (click)="removeDynamicField(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+      <button
+        class="add_course"
+        mat-raised-button
+        color="primary"
+        (click)="addDynamicField()"
+        type="button"
+      >
+        Add New Course
+      </button>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Select Courses</mat-label>
+
+        <mat-select
+          formControlName="courses"
+          multiple
+          [compareWith]="compareObjects"
+        >
+          <mat-option
+            *ngFor="let course of allCoursesDropdown"
+            [value]="course"
+            >{{ course.subject_name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">
+      Cancel
+    </button>
+    <button mat-raised-button color="primary" type="submit">
+      {{ data ? "Update" : "Save" }}
+    </button>
+  </div>
+</form>

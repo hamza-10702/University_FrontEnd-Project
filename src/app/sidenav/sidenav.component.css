@@ -1,0 +1,48 @@
+.main_universities {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  align-items: center;
+  margin: auto;
+}
+
+.example-card {
+  max-width: 400px;
+  min-width: 200px;
+  /* max-height: 110px; */
+}
+
+.main_universities h1 {
+  font-size: 40px;
+  padding-block: 30px;
+  font-weight: 900;
+}
+.main_dashboard {
+  padding-inline: 30px;
+  display: flex;
+  gap: 40px;
+}
+
+.count {
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.charts {
+  padding-top: 40px;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+}
+
+#barChart {
+  max-width: 50%;
+  max-height: 500px;
+}
+
+#totalRecords {
+  max-width: 50%;
+  max-height: 500px;
+}
